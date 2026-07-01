@@ -1,0 +1,29 @@
+{
+  "name": "customer-records-flow",
+  "hops": [
+    {
+      "name": "client -> load balancer",
+      "description": "Public HTTPS entry point, upgraded to hybrid PQC TLS",
+      "algorithms": ["ML-KEM", "AES-256"],
+      "encrypted": true
+    },
+    {
+      "name": "load balancer -> application",
+      "description": "Internal TLS between LB and app servers",
+      "algorithms": ["ECDH", "AES-256"],
+      "encrypted": true
+    },
+    {
+      "name": "application -> database",
+      "description": "App connects to primary database over TLS",
+      "algorithms": ["RSA", "AES-256"],
+      "encrypted": true
+    },
+    {
+      "name": "database -> backup store",
+      "description": "Nightly backup replication to secondary region",
+      "algorithms": ["AES-256"],
+      "encrypted": true
+    }
+  ]
+}
