@@ -1,6 +1,6 @@
 # PQCVerify
 
-A proof-of-concept AI-assisted verification layer for post-quantum cryptography (PQC) readiness. Is still under construction. Many of the points discussed below are stuff I wanna add to the repo.
+A proof-of-concept AI-assisted verification layer for post-quantum cryptography (PQC) readiness. Is still under construction. Some of the points discussed below are stuff I wanna add to the repo.
 
 Most tools in this space are **scanners** — they answer *"what encryption is here?"* PQCVerify answers a harder, more useful question: *"does this system, taken as a whole, actually deliver quantum-safe protection?"* It verifies **emergent properties of the assembled system** — properties that can be false even when every individual component looks fine — and returns a clear verdict: **Verified, Partially Verified, Not Verified, or Insufficient Evidence**, each with plain-language reasoning and a concrete next step.
 
